@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Notation Scanner - Megan Mesya</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="bg-glow">
+    <div class="glow-1"></div>
+    <div class="glow-2"></div>
+    <div class="glow-3"></div>
+    <div class="glow-4"></div>
+  </div>
+
+  <div class="logo-brand" id="logo-brand" onclick="openAbout()">
+    <div class="logo-circle"></div>
+    <div class="logo-text">
+      <div class="logo-name">Megan Mesya</div>
+      <div class="logo-nim">241011060038</div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <section class="header">
+      <div class="header-label">Scientific Calculator</div>
+      <h1 class="header-title">Notation</h1>
+      <p class="header-desc">Deteksi dan konversi notasi ilmiah dengan presisi tinggi</p>
+    </section>
+
+    <section class="input-group">
+      <div class="input-wrapper">
+        <input type="text" id="input-field" class="input-field" placeholder="Masukkan: 3.5e4" spellcheck="false">
+        <button class="btn-scan" id="btn-scan" onclick="runScanner()">SCAN</button>
+      </div>
+    </section>
+
+    <section class="result-container" id="result-container" style="display: none;">
+      <div class="result-card">
+        <div class="result-header">
+          <div class="result-label">HASIL</div>
+          <span class="result-status" id="result-status">—</span>
+        </div>
+        <div class="result-input" id="result-input">—</div>
+        <div class="result-decimal" id="result-decimal"></div>
+        <div class="verdict-box" id="verdict-box">
+          <div class="verdict-text" id="verdict-text">?</div>
+          <div class="verdict-desc" id="verdict-desc">—</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="examples-section">
+      <div class="examples-group">
+        <div class="examples-label">✓ Valid</div>
+        <div class="examples-chips">
+          <button class="chip chip-valid" onclick="tryExample('3e2')">3e2</button>
+          <button class="chip chip-valid" onclick="tryExample('7.51e-9')">7.51e-9</button>
+          <button class="chip chip-valid" onclick="tryExample('3.5e4')">3.5e4</button>
+          <button class="chip chip-valid" onclick="tryExample('-5.3e4')">-5.3e4</button>
+          <button class="chip chip-valid" onclick="tryExample('9.87e2')">9.87e2</button>
+        </div>
+      </div>
+      <div class="examples-group">
+        <div class="examples-label invalid">✗ Invalid</div>
+        <div class="examples-chips">
+          <button class="chip chip-invalid" onclick="tryExample('300')">300</button>
+          <button class="chip chip-invalid" onclick="tryExample('4321.768')">4321.768</button>
+          <button class="chip chip-invalid" onclick="tryExample('0.2')">0.2</button>
+          <button class="chip chip-invalid" onclick="tryExample('10')">10</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="format-section">
+      <div class="format-label">Format</div>
+      <div class="format-code">a × 10<sup>n</sup> → ae<sup>n</sup></div>
+      <div class="format-desc">Dimana <strong>1 ≤ |a| < 10</strong> dan <strong>n</strong> adalah bilangan bulat. Contoh: <code>3.5e3</code></div>
+    </section>
+
+  </div>
+
+  <div class="modal" id="about-modal">
+    <div class="modal-overlay" onclick="closeAbout()"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Creator Info</h2>
+        <button class="modal-close" onclick="closeAbout()">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="info-item">
+          <div class="info-label">Full Name</div>
+          <div class="info-value">Megan Mesya Chiquita Manoppo</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Student ID</div>
+          <div class="info-value">241011060038</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Project</div>
+          <div class="info-value">Scientific Notation Scanner</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Description</div>
+          <div class="info-value">Aplikasi modern untuk mendeteksi dan mengkonversi notasi ilmiah dengan antarmuka neon yang futuristik.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
